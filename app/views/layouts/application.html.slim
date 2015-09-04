@@ -1,0 +1,102 @@
+doctype html
+html
+  head
+    title 
+      | AngularjsDemo
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body.index ng-app="angularDemos" data-spy="scroll" data-target=".navbar" ng-controller="MainCtrl" data-ng-init="onTimeout()"
+    .fc-page-loader
+      .fc-spinner
+        .fc-spinner-front
+          = image_tag 'logo.png', alt: 'EveryDeal'
+        .fc-spinner-back
+          = image_tag 'logo.png', alt: 'EveryDeal'
+    header#header
+      nav#mobile-menu.navbar role="navigation" 
+        a.logo href="index.html" 
+          = image_tag 'logo.png', alt: "EveryDeal"
+        a href="$main-menu" 
+          i.fa.fa-reorder
+      nav#main-menu.navbar role="navigation" 
+        span.navbar-bar
+        ul.nav.navbar-nav
+          li.logo-nav
+            a.logo href="index.html" 
+              = image_tag 'logo.png', alt: "EveryDeal"
+          li
+            a href="#home"  Home
+          li
+            a href="#services"  Services
+          li
+            a href="#offer"  Offer
+          li
+            a href="#team"  Team
+          li
+            a href="#portfolio"  Portfolio
+          li
+            a href="#blog"  Blog
+          li
+            a href="features-typography.html"  Extra
+            ul.dropdown
+              li
+                a href="features-typography.html"  Typography
+              li
+                a href="features-components.html"  Components
+              li
+                a href="features-animation.html"  Animation
+              li.devider
+              li
+                a href="portfolio-style-1.html"  Portfolio - Style 1
+              li
+                a href="portfolio-style-2.html"  Portfolio - Style 2
+              li
+                a href="portfolio-style-3.html"  Portfolio - Style 3
+              li
+                a href="portfolio-style-4.html"  Portfolio - Style 4
+              li
+                a href="portfolio-style-5.html"  Portfolio - Style 5
+              li.devider
+              li
+                a href="blog.html"  Blog - Regular Layout
+              li
+                a href="blog-grid-3-column.html"  Blog - Grid 3 col
+              li
+                a href="post-text.html"  Post - Text
+              li
+                a href="post-slider.html"  Post - Slider
+              li
+                a href="post-quote.html"  Post - Quote
+              li
+                a href="post-image.html"  Post - Image
+              li
+                a href="post-audio.html"  Post - Audio
+              li
+                a href="post-video.html"  Post - Video
+              li
+                a href="post-iframe-video.html"  Post - Iframe video
+          li.contact-nav
+            a href="$contact"  Contact
+        ul.social-nav
+          li
+            a href="#"
+              i.icomoon-dribbble
+              span Dribbble
+          li
+            a href="#"
+              i.icomoon-pinterest
+              span Pinterest
+          li
+            a href="#"
+              i.icomoon-facebook
+              span Facebook
+          li
+            a href="#"
+              i.icomoon-twitter
+              span Twitter
+          li
+            a href="#"
+              i.icomoon-google-plus
+              span Google
+    = yield

@@ -1,0 +1,63 @@
+aside#page-header-wrap {
+  background-image:url(uploads/images/slides/2/bg.jpg);
+}
+.cost_of_sales {
+  color: #A0A0A0 !important;
+  text-decoration: line-through;
+  margin-left: 10px;
+  font-size: 14px;
+}
+.fc-article-content {
+  .title {
+    margin-bottom: 15px;
+    h2 {
+      font-size: 24px;
+      height: 55px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    h4 {
+    color: #FF6F6F;
+    font-weight: bold;
+    margin: 0px;
+    }
+  }
+  .fa:before {
+    padding-right: 5px;
+  }
+  .box-center {
+    margin: 0 auto;
+    display: table;
+    margin-bottom: 5px;
+    p {
+      display: inline-block;
+      background-color: #404148;
+      color: #FFF;
+      width: 39px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  }
+  .info {
+    margin-bottom: 12px;
+    p {
+      margin-bottom: 5px;
+    }
+    .text-right {
+      text-align: right;
+    }
+  }
+  .btn {
+    height: 30px;
+    border-radius: 0px;
+    background-color: #404148 !important;
+    font-size: 12px;
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+  

@@ -1,0 +1,24 @@
+.row
+  .col-md-12
+    .book-normal
+      .md-books.col-md-3 ng-repeat="book in listBook"
+        .md-pro
+          .md-detail
+            img ng-src="{{book.image}}" width="160px" class="image-book"
+          p.name
+            | {{ book.name}}
+          p.price
+            | {{ book.price + '.000VND'}}
+          p.pubdate
+            | {{ book.pubdate | date:'fullDate' }}
+.row
+  ul.pagination
+    li 
+      a href="" ng-click="prev()"
+        | &laquo;
+    li ng-repeat="p in pages" ng-class="{active: p == currentPage}"
+      a href="#list-book/{{p}}"
+        | {{p}} 
+    li
+      a href="" ng-click="next()"
+        | &raquo;

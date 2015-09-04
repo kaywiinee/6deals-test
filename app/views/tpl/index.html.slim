@@ -1,0 +1,53 @@
+.col-md-3.slide-bar
+  .your-cart
+    .md-info
+      h3
+        | Your Cart: 
+        span 
+          | {{ cart_num }}
+  .new-book
+    h3
+      | Add new book here:
+    form.md-form role="form" enctype='multipart/form-data'
+      label Name:
+      input.form-control type="text" ng-model="book.name"
+      label Price:
+      input.form-control type="text" ng-model="book.price"
+      .file style="position:relative;"
+        a.btn.btn-primary href='javascript:;'
+          | Image...
+          input.file-style type="file" accept="image/*" custom-on-change="uploadFile"
+        span.form-control.file-text id="upload-file-info"
+      button.btn.btn-ok type="button" ng-click="newBook(book)"
+        | Submit
+.col-md-9
+  .row.book-normal
+    .md-books.col-md-4 ng-repeat="book in bestSeld"
+      .md-pro
+        .md-detail
+          img ng-src="{{book.image}}" width="160px" class="image-book"
+        p.name
+          | {{ book.name}}
+        p.price
+          | {{ book.price + '.000VND'}}
+        p.pubdate
+          | {{ book.pubdate | date:'fullDate' }}
+        p.action-cart.add-book ng-click="addBook()"
+          | Add
+        p.action-cart.remove-book ng-click="removeBook()"
+          | Remove
+        p.new ng-if="book.new == 1"
+          span
+            | New
+  .row.switch-tabs
+    .tab
+      ul
+        li ng-click="page='disCount'" ng-class="{active: page=='disCount'}"
+          | Discount
+        li ng-click="page='bestSeld'" ng-class="{active: page=='bestSeld'}"
+          | Best Seld
+  ng-switch on="page"
+    .row ng-switch-default="disCount"
+      book-info info="disCount"
+    .row ng-switch-when="bestSeld"
+      book-info info="bestSeld"

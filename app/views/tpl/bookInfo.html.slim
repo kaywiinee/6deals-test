@@ -1,0 +1,11 @@
+.md-books.col-md-4 ng-repeat="book in info"
+  .md-pro
+    .md-detail
+      img ng-src="{{book.image}}" width="160px" class="image-book"
+      delete-book
+    p.name
+      | {{ book.name}}
+    p.price
+      | {{ book.price + '.000VND'}}
+    p.pubdate
+      | {{ book.pubdate | date:'fullDate' }}
